@@ -1,7 +1,7 @@
 ﻿﻿﻿﻿﻿﻿
 # Unix Assignment
 
-# Zea mays
+
 ## Data Inspection
 Inspection of data to figure out the header and number of rows
 
@@ -26,6 +26,8 @@ Inspection of data to figure out the header and number of rows
 
 ## Rearranging the columns in the file according to final output
 `awk 'BEGIN {FS="\t"; OFS="\t"} {print $1, $3, $4, $2, $5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15}' snp_sorted.txt >snp_sorted_col.txt`
+
+# Zea mays (Maize)
 
 ## Filtering only maize data from genotype dataset
  
