@@ -2,7 +2,7 @@
 # Unix Assignment
 
 # Zea mays
-##Data Inspection
+## Data Inspection
 Inspection of data to figure out the header and number of rows
 
 
@@ -54,7 +54,7 @@ Inspection of data to figure out the header and number of rows
 
 ## Creating 10 files (1 for each chromosome) with SNPs ordered based on decreasing position values and with missing data encoded by this symbol: -
  `head -n 1 maize_joined.txt | awk 'BEGIN {FS="\t"; OFS="\t"}{ for (i=1; i <= 10; i++) print $0 >"Chr_"i"_des.txt"}'`
-####- Creates files with name Chr\_(Chromosome number)\_des.txt for each chromosome with just the header row
+#### - Creates files with name Chr\_(Chromosome number)\_des.txt for each chromosome with just the header row
 `tail -n +2 maize_joined.txt | sort -k2,2 -k3,3rn | sed 's/?/-/g' | awk 'BEGIN {FS="\t"; OFS="\t"}{ if($2 >= 1 && $2 <= 10) {  print  >>"Chr_"$2"_des.txt"}}'`
 #### - Sorts the data from the joined file (excluding header) based of Chromosome number followed by descending order of position, sed replaces ? with -,and  then pipes it into awk which saves data for each chromosome number into respective files.
 
@@ -93,9 +93,9 @@ Inspection of data to figure out the header and number of rows
 
 ## Creating 10 files (1 for each chromosome) with SNPs ordered based on increasing position values and with missing data encoded by this symbol: ?
  `head -n 1 teosinte_joined.txt | awk 'BEGIN {FS="\t"; OFS="\t"}{ for (i=1; i <= 10; i++) print $0 >"Chr_"i"_asc_Teosinte.txt"}'`
-####- Creates files with name Chr\_(Chromosome number)\_asc\_Teosinte.txt for each chromosome with just the header row
+#### - Creates files with name Chr\_(Chromosome number)\_asc\_Teosinte.txt for each chromosome with just the header row
 `tail -n +2 teosinte_joined.txt | sort -k2,2 -k3,3n | awk 'BEGIN {FS="\t"; OFS="\t"}{ if($2 >= 1 && $2 <= 10) {  print  >>"Chr_"$2"_asc_Teosinte.txt"}}'`
-####- Sorts the data from the joined file (excluding header) based of Chromosome number followed by ascending order of position, then pipes it into awk which saves data for each chromosome number into respective files.
+#### - Sorts the data from the joined file (excluding header) based of Chromosome number followed by ascending order of position, then pipes it into awk which saves data for each chromosome number into respective files.
 
 ## Creating 10 files (1 for each chromosome) with SNPs ordered based on decreasing position values and with missing data encoded by this symbol: -
  `head -n 1 teosinte_joined.txt | awk 'BEGIN {FS="\t"; OFS="\t"}{ for (i=1; i <= 10; i++) print $0 >"Chr_"i"_des_Teosinte.txt"}'`
