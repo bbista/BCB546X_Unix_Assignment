@@ -40,6 +40,7 @@ Inspection of data to figure out the header and number of rows
 ## Sorting the data before join 
 #### The second and third row do not contain genotype data, so the second command skips them while retaining the header
 `head -n 1 transposed_maize_genotypes.txt > maize_sorted.txt`
+
 `tail -n+4 transposed_maize_genotypes.txt | sort  -k1,1 >>maize_sorted.txt`
 
 ## Joining the two files
@@ -85,6 +86,7 @@ Inspection of data to figure out the header and number of rows
 ## Sorting the data before join 
 #### The second and third row do not contain genotype data, so the second command skips them while retaining the header
 `head -n 1 transposed_teosinte_genotypes.txt > teosinte_sorted.txt`
+
 `tail -n+4 transposed_teosinte_genotypes.txt | sort  -k1,1 >>teosinte_sorted.txt`
 
 ## Joining the two files
